@@ -1,0 +1,7 @@
+# https://manpages.debian.org/testing/live-build/lb_clean.1.en.html
+
+#!/bin/sh
+
+set -e
+
+lb clean noauto "$@"

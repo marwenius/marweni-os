@@ -1,0 +1,9 @@
+# https://manpages.debian.org/testing/live-build/lb_build.1.en.html
+
+#!/bin/sh
+
+set -e
+
+lb build noauto "${@}" 2>&1 | tee build.log
+
+#lb build noauto --verbose --debug "${@}" 2>&1 | tee build.log

@@ -1,0 +1,12 @@
+# https://manpages.debian.org/testing/apt/apt_preferences.5.en.html#APT%27s_Default_Priority_Assignments
+# https://wiki.debian.org/AptConfiguration#Using_pinning
+
+# Examples
+
+# Package: linux-image-amd64
+# Pin: release a=stable-backports
+# Pin-Priority: 600
+
+# Package: libreoffice*
+# Pin: release a=*
+# Pin-Priority: -1

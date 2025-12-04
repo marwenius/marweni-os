@@ -1,0 +1,4 @@
+# https://preseed.debian.net/debian-preseed/trixie/amd64-non-free-firmware-full.txt
+
+d-i firmware-ipw2x00/license/accepted boolean true
+d-i firmware-ivtv/license/accepted boolean true
