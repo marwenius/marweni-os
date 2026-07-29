@@ -1,0 +1,32 @@
+# https://manpages.debian.org/testing/live-build/lb_config.1.en.html
+
+#!/bin/sh
+
+set -e
+
+lb config noauto \
+ --architecture amd64 \
+ --distribution stable \
+ --bootloaders grub-efi \
+ --debian-installer none \
+ --backports true \
+ --updates true \
+ --security true \
+ --apt-recommends true \
+ --archive-areas "main contrib non-free non-free-firmware" \
+ --apt-indices true \
+ --apt-source-archives false \
+ --clean \
+ --memtest none \
+ --firmware-binary true \
+ --firmware-chroot true \
+ --debconf-frontend noninteractive \
+ --debconf-priority critical \
+ --bootappend-live "boot=live components quiet splash loglevel=0 locales=de_DE.UTF-8 timezone=Europe/Berlin keyboard-layouts=de keyboard-variant=nodeadkeys" \
+ --debootstrap-options "--include=ca-certificates,openssl" \
+ --mirror-binary https://deb.debian.org/debian/ \
+ --mirror-binary-security https://deb.debian.org/debian-security/ \
+ --mirror-bootstrap https://deb.debian.org/debian/ \
+ --mirror-chroot https://deb.debian.org/debian/ \
+ --mirror-chroot-security https://deb.debian.org/debian-security/ \
+"${@}"
